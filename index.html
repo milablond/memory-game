@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeu Memory</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>✔️ Memory Game</h1>
+            <div class="controls">
+                <label for="gridSize">Taille de la grille :</label>
+                <select id="gridSize">
+                    <option value="4">4x4 (Facile)</option>
+                    <option value="6">6x6 (Moyen)</option>
+                    <option value="8">8x8 (Difficile)</option>
+                </select>
+                <button id="newGame">Nouveau Jeu</button>
+            </div>
+            <div class="stats">
+                <div class="stat">
+                    <span class="label">Clics:</span>
+                    <span id="clicks">0</span>
+                </div>
+                <div class="stat">
+                    <span class="label">Temps:</span>
+                    <span id="timer">00:00</span>
+                </div>
+                <div class="stat">
+                    <span class="label">Paires:</span>
+                    <span id="pairs">0</span>/<span id="totalPairs">0</span>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div id="gameBoard" class="game-board"></div>
+        </main>
+    </div>
+
+    <!-- Pop-up pour les paires trouvées -->
+    <div id="pairPopup" class="popup hidden">
+        <div class="popup-content">
+            <h3 id="popupMessage">Bien joué ! 🎉</h3>
+        </div>
+    </div>
+
+    <!-- Pop-up fin de jeu -->
+    <div id="gameOverPopup" class="popup hidden">
+        <div class="popup-content">
+            <h2>🏆 Félicitations !</h2>
+            <p>Vous avez terminé en <span id="finalTime"></span> avec <span id="finalClicks"></span> clics !</p>
+            <button id="playAgain">Rejouer</button>
+        </div>
+    </div>
+
+    <div id="doubtTooltip" class="doubt-tooltip hidden">Tu es sûr(e) ?</div>
+</body>
+</html>
